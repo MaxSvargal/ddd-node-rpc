@@ -27,11 +27,12 @@
 			"modules": true
 		}
 	},
-	"plugins": ["@typescript-eslint", "prettier"],
+	"plugins": ["@typescript-eslint", "import", "prettier"],
 	"rules": {
-		"indent": ["error", "tab"],
-		"no-console": ["error"],
+		"indent": "off",
+		"no-console": ["warn"],
 		"no-debugger": ["error"],
+		"@typescript-eslint/no-non-null-assertion": "off",
 		"no-multiple-empty-lines": [
 			"error",
 			{
@@ -50,6 +51,12 @@
 		"react/display-name": "off"
 	},
 	"settings": {
-		"import/extensions": [".js", ".ts"]
+		"import/extensions": [".js", ".ts"],
+		"import/resolver": {
+			"typescript": {},
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
 	}
 }
