@@ -8,8 +8,8 @@ export interface RPCErrorDTO {
 
 export type RPCResponseResultDTO = Record<string, unknown> | unknown
 
-export interface RPCResponseSuccessDTO<Result extends RPCResponseResultDTO> {
-	result: Result
+export interface RPCResponseSuccessDTO {
+	result: RPCResponseResultDTO
 	id?: string | null
 }
 
