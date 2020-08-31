@@ -6,14 +6,12 @@ export interface RPCErrorDTO {
 	data?: unknown | unknown[]
 }
 
-export type RPCResponseResultDTO = Record<string, unknown> | unknown
-
-export interface RPCResponseSuccessDTO {
-	result: RPCResponseResultDTO
+export interface RPCResponseSuccessDTO<Result extends unknown> {
+	result: Result
 	id?: string | null
 }
 
-export interface RPCResponseErrorDTO extends RPCJsonVersion {
-	error: RPCErrorDTO
+export interface RPCResponseErrorDTO<Error extends RPCErrorDTO> extends RPCJsonVersion {
+	error: Error
 	id: string | null
 }

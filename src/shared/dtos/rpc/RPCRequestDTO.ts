@@ -1,16 +1,14 @@
 import { RPCJsonVersion } from './RPCJsonVersion'
 
-export type RPCRequestParamsDTO<T extends unknown> = T
-
-export interface RPCRequestNotificationDTO extends RPCJsonVersion {
+export interface RPCRequestNotificationDTO<Params extends unknown> extends RPCJsonVersion {
 	method: string
-	params: RPCRequestParamsDTO<unknown>
+	params: Params
 }
 
-export interface RPCRequestObjectDTO extends RPCJsonVersion {
+export interface RPCRequestObjectDTO<Params extends unknown> extends RPCJsonVersion {
 	id: string
 	method: string
-	params: RPCRequestParamsDTO<unknown>
+	params: Params
 }
 
-export type RPCRequestDTO = RPCRequestObjectDTO | RPCRequestNotificationDTO
+// export type RPCRequestDTO = RPCRequestObjectDTO | RPCRequestNotificationDTO
