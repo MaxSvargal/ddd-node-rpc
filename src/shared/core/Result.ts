@@ -37,8 +37,8 @@ export class Result<T> {
 		return new Result<U>(true, undefined, value)
 	}
 
-	public static fail<U>(error: string): Result<U> {
-		return new Result<U>(false, error)
+	public static fail<T>(error: T): Result<T> {
+		return new Result<T>(false, error)
 	}
 
 	public static combine(results: Result<unknown>[]): Result<unknown> {
