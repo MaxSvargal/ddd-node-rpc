@@ -8,8 +8,6 @@ export class RPCRouter {
 
 	static handle(controller: RPCController): void {
 		this.methods.set(controller.method, controller)
-		console.log('handle', controller.method, controller)
-		return void 0
 	}
 
 	static async call(req: RPCCall<AnyRequestDTO, AnyResponseDTO>): Promise<void> {

@@ -20,7 +20,7 @@ export abstract class RPCResponseError implements RPCResponseErrorDTO<RPCErrorDT
 }
 
 export class RPCErrorMethodNotFound extends RPCResponseError {
-	constructor(id: string, data?: unknown | unknown[]) {
+	constructor(id: string | null, data?: unknown | unknown[]) {
 		super(
 			{
 				code: -32601,
@@ -33,7 +33,7 @@ export class RPCErrorMethodNotFound extends RPCResponseError {
 }
 
 export class RPCErrorInternal extends RPCResponseError {
-	constructor(id: string, data?: unknown | unknown[]) {
+	constructor(id: string | null, data?: unknown | unknown[]) {
 		super(
 			{
 				code: -32603,
