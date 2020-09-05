@@ -1,6 +1,6 @@
 import { myController } from './rpc.setup'
-import { RPCCall } from 'shared/infra/http/rpc/RPCCall'
-import { RPCClient } from 'shared/infra/http/rpc/RPCClient'
+import { RPCCall } from 'shared/rpc/infra/RPCCall'
+import { RPCClient } from 'shared/rpc/infra/RPCClient'
 
 import type WebSocket from 'ws'
 

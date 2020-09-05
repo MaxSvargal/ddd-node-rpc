@@ -1,12 +1,12 @@
 import { Either, left, Result, right } from 'shared/core/Result'
 import { UnexpectedError } from 'shared/core/AppError'
-import { RPCRequestObjectDTO } from 'shared/dtos/rpc/RPCRequestDTO'
-import { RPCResponseSuccessDTO } from 'shared/dtos/rpc/RPCResponseDTO'
-import { RPCController } from 'shared/infra/http/rpc/RPCController'
 import { Guard } from 'shared/core/Guard'
-import { RPCErrorInvalidParams, RPCErrorInvalidRequest, RPCErrorServer } from 'shared/infra/http/rpc/RPCErrors'
 import { UseCaseError } from 'shared/core/UseCaseError'
-import { RPCCall } from 'shared/infra/http/rpc/RPCCall'
+import { RPCCall } from 'shared/rpc/infra/RPCCall'
+import { RPCRequestObjectDTO } from 'shared/rpc/dtos/RPCRequestDTO'
+import { RPCResponseSuccessDTO } from 'shared/rpc/dtos/RPCResponseDTO'
+import { RPCController } from 'shared/rpc/infra/RPCController'
+import { RPCErrorInvalidParams, RPCErrorInvalidRequest, RPCErrorServer } from 'shared/rpc/infra/RPCErrors'
 import { UseCase } from '~/shared/core/UseCase'
 
 type MyId = string & { _type: 'MyId' }

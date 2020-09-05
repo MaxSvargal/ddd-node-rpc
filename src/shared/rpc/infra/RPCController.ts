@@ -1,6 +1,6 @@
 import { AnyRequestDTO, AnyResponseDTO, RPCCall } from './RPCCall'
 import { RPCErrorServer } from './RPCErrors'
-import { RPCErrorDTO, RPCResponseErrorDTO, RPCResponseSuccessDTO } from 'shared/dtos/rpc/RPCResponseDTO'
+import { RPCErrorDTO, RPCResponseErrorDTO, RPCResponseSuccessDTO } from '../dtos/RPCResponseDTO'
 
 type AnyRPCRequest = RPCCall<AnyRequestDTO, AnyResponseDTO>
 export abstract class RPCController {

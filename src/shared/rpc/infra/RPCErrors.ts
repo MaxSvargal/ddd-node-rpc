@@ -1,5 +1,5 @@
-import { RPCErrorDTO, RPCResponseErrorDTO } from 'shared/dtos/rpc/RPCResponseDTO'
-import { ObjectUtils } from 'shared/utils/ObjectUtils'
+import { RPCErrorDTO, RPCResponseErrorDTO } from '../dtos/RPCResponseDTO'
+import { ObjectUtils } from '~/shared/utils/ObjectUtils'
 
 export abstract class RPCResponseError implements RPCResponseErrorDTO<RPCErrorDTO> {
 	[index: string]: unknown

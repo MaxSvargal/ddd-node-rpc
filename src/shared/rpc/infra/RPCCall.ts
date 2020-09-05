@@ -1,8 +1,8 @@
 import { RPCClient } from './RPCClient'
 import { RPCErrorInvalidRequest, RPCErrorParse, RPCResponseError } from './RPCErrors'
-import { RPCRequestNotificationDTO, RPCRequestObjectDTO } from 'shared/dtos/rpc/RPCRequestDTO'
+import { RPCRequestNotificationDTO, RPCRequestObjectDTO } from '../dtos/RPCRequestDTO'
+import { RPCErrorDTO, RPCResponseErrorDTO, RPCResponseSuccessDTO } from '../dtos/RPCResponseDTO'
 import { Either, left, right } from 'shared/core/Result'
-import { RPCErrorDTO, RPCResponseErrorDTO, RPCResponseSuccessDTO } from 'shared/dtos/rpc/RPCResponseDTO'
 import { Guard } from 'shared/core/Guard'
 
 export type AnyRequestDTO = RPCRequestObjectDTO<unknown> | RPCRequestNotificationDTO<unknown>
