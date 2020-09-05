@@ -1,10 +1,9 @@
-import { RPCRequestObjectDTO } from 'shared/rpc/dtos/RPCRequestDTO'
-import { RPCResponseSuccessDTO } from 'shared/rpc/dtos/RPCResponseDTO'
-import { RPCCall } from 'shared/rpc/infra/RPCCall'
+import { RPCClient } from '~/shared/rpc/infra/RPCClient'
+import { RPCRequestObjectDTO } from '~/shared/rpc/dtos/RPCRequestDTO'
+import { RPCResponseSuccessDTO } from '~/shared/rpc/dtos/RPCResponseDTO'
+import { RPCCall } from '~/shared/rpc/infra/RPCCall'
 
-import type { RPCClient } from 'shared/rpc/infra/RPCClient'
-
-describe.skip('RPCCall', () => {
+describe('RPCCall', () => {
 	let send: jest.Mock<void, string[]>
 	let client: RPCClient
 

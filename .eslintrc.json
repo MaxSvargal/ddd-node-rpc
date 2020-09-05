@@ -51,11 +51,17 @@
 		"react/display-name": "off"
 	},
 	"settings": {
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
 		"import/extensions": [".js", ".ts"],
 		"import/resolver": {
-			"typescript": {},
+			"typescript": {
+				"project": "./tsconfig.json"
+			},
 			"node": {
-				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+				"extensions": [".js", ".jsx", ".ts", ".tsx"],
+				"paths": ["src"]
 			}
 		}
 	}
