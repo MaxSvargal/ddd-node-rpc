@@ -37,6 +37,7 @@ export class Semaphore {
 		const { resolve, timer } = this.queue.shift()!
 
 		clearTimeout(timer)
-		setTimeout(resolve, 0)
+		process.nextTick(resolve)
+		// setTimeout(resolve, 0)
 	}
 }
