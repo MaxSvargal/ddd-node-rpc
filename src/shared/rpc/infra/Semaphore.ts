@@ -15,8 +15,6 @@ export class Semaphore {
 		return new Promise((resolve, reject) => {
 			if (this.counter > 0) {
 				this.counter--
-				resolve()
-				return
 			}
 			if (this.queue.length >= this.size) {
 				reject(new Error('Semaphore queue is full'))

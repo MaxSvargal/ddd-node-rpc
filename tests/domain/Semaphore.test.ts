@@ -1,6 +1,6 @@
 import { Semaphore } from 'shared/rpc/infra/Semaphore'
 
-const sleep = (msec: number) =>
+const sleep = (msec: number): Promise<void> =>
 	new Promise((resolve) => {
 		setTimeout(() => {
 			resolve()
@@ -9,7 +9,7 @@ const sleep = (msec: number) =>
 
 describe('Semaphore', () => {
 	it('when add tasks in queue', async () => {
-		const semaphore = new Semaphore(2, 10, 1000)
+		const semaphore = new Semaphore(2, 10, 1800)
 
 		let step = 0
 
@@ -54,22 +54,17 @@ describe('Semaphore', () => {
 		await sleep(800)
 	})
 
-	it.skip('when task is out of timeout', async () => {
+	it('when task is out of timeout', async () => {
 		const semaphore = new Semaphore(2, 10, 100)
-		const exit = jest.fn()
+		const onTimeout = jest.fn()
 		try {
 			await semaphore.enter()
-			// should be rejexted
+			await sleep(150)
 		} catch (err) {
-			console.log({ err })
-			exit()
-		}
-
-		try {
-			await sleep(200)
+			onTimeout(err)
 		} finally {
-			semaphore.leave()
-			expect(exit).toHaveBeenCalledTimes(1)
+			expect(onTimeout).toHaveBeenCalledTimes(1)
+			expect(onTimeout).toHaveBeenCalledWith(Error('Semaphore timeout'))
 		}
 	})
 })
